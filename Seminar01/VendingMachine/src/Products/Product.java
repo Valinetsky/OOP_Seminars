@@ -1,53 +1,67 @@
 package Products;
 
-
-/**
+/** 
  * Базовый класс продукта
- */
+*/
 public class Product {
-
-    /** Наименование продукта  */
+    
+    /** наименование продукта */
     private String name;
-    /** Цена продукта */
+    /** цена продукта*/
     private Double price;
 
     /**
-     * Конструктор продукта
-     * @param name это название
-     * @param price это цена
+     * конструктор продукта 2 параметра
+     * @param name наименование продукта
+     * @param price цена продукта
      */
     public Product(String name, Double price) {
-        this.name = name;
+        this(name);
         this.price = price;
     }
 
-    public Product(String name) {
+    /**
+     * конструктор продукта 1 параметр
+     * @param name наименование продукта
+     */
+    public Product(String name)
+    {
         this.name = name;
     }
 
-    public Product() {
-        this.name = "Paper";
-        this.price = 0.0;
+    /** получаем наименование продукта */
+    public String getName(){ 
+        return name; 
+    } 
+
+    /** получаем цену продукта */
+    public Double getPrice(){ 
+        return price; 
     }
 
-    public String getName(){
-        return name;
-    }
-
-    public Double getPrice(){
-        return price;
-    }
-
-    public void setPrice(Double value){
+    /**
+     * устанавливаем цену продукта
+     * @param value новая цена продукта
+     */
+    public void setPrice(Double value)
+    {
         if (value <= 0) {
-            throw new IllegalStateException(String.format("Price too small", value));
+            throw new IllegalStateException(String.format("Цена указана некорректно!", value));
+            //return;
         }
         this.price = value;
     }
 
+    /**
+     * переопределение вывода продукта
+     */
     @Override
-    public String toString(){
-        return "Product{" + "name='" + name + '\'' + ", cost=" + price + '}';
+    public String toString()
+    {
+        return  "Product{" +
+        "name='" + name + '\'' +
+        ", cost=" + price +
+        '}';
     }
-    // Override
 }
+
