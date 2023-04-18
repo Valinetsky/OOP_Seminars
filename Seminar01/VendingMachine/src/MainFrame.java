@@ -9,6 +9,8 @@ public class MainFrame extends JFrame {
     
     final private Font mainFont = new Font("Segoe print", Font.BOLD, 18);
     JTextField tfFirstName, tfLastName;
+
+    // private JList probeList = new JList<>(itemMachin);
     
     
     JLabel lbWelcome;
@@ -23,7 +25,7 @@ public class MainFrame extends JFrame {
         tfFirstName.setFont(mainFont);
         
         
-        JLabel lbLastName = new JLabel("First Name");
+        JLabel lbLastName = new JLabel("Last Name");
         lbLastName.setFont(mainFont);
 
        
@@ -55,7 +57,7 @@ public class MainFrame extends JFrame {
                 
                 
                 String firstName = tfFirstName.getText();
-                String lastName = tfFirstName.getText();
+                String lastName = tfLastName.getText();
                 lbWelcome.setText("Hello " + firstName + " " + lastName);
                 
                 

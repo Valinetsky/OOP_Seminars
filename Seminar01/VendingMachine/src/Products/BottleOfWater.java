@@ -30,5 +30,4 @@ public class BottleOfWater extends Product {
         ", volume=" + volume +
         '}';
     }
-    
 }
