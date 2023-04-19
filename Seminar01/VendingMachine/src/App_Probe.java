@@ -4,7 +4,8 @@ import Products.HotDrink;
 import VendingMachines.VendingMachine;
 
 
-public class App {
+
+public class App_Probe {
     public static void main(String[] args) throws Exception {
 
 
@@ -23,13 +24,18 @@ public class App {
         itemMachin.addProduct(new HotDrink("Soup", 1337, 250, 300));
         itemMachin.addProduct(new HotDrink("Borsch", 100500, 777, -300));
 
+        String probe = "";
+        
         for(Product prod: itemMachin.getProdAll())
         {
             System.out.println(prod.toString());
+            probe = probe + prod + "\n";
         }
+       
 
-        // MainFrame app = new MainFrame();
-        // app.setVisible(true);
+        MyWindow app = new MyWindow(probe);
+
+        app.setVisible(true);
        
     }
 }

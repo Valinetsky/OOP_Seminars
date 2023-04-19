@@ -17,12 +17,19 @@ public class HotDrink extends Product {
      * @param name - название
      * @param price - цена
      * @param volume - объём
-     * @param heat - температура
+     * @param heat - температура (нормализуем входящие значения: не менее 0°K и не более 451°F)
      */
     public HotDrink(String name, double price, int volume, int heat)
         {
             super(name, price);
             this.volume = volume;
+
+            if (heat < -273) {
+                heat = -273;
+            }
+            if (heat > 232) {
+                heat = 232;
+            }
             this.heat = heat;
         }
 

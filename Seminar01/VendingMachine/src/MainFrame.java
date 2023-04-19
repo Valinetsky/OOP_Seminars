@@ -8,7 +8,7 @@ public class MainFrame extends JFrame {
     
     
     final private Font mainFont = new Font("Segoe print", Font.BOLD, 18);
-    JTextField tfFirstName, tfLastName;
+    JTextField tfFirstName, tfLastName, Probe;
 
     // private JList probeList = new JList<>(itemMachin);
     
