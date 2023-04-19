@@ -7,7 +7,7 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         MainFrame app = new MainFrame();
-        app.
+    
 
         Product item1 = new Product("Cola",88.0);
         item1.setPrice(98.0);
