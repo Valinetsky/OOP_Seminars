@@ -1,32 +1,50 @@
 package Classes;
 
+// https://github.com/H43apo8/OOP_Java/tree/main/HomeWork2/src/Classes
+
+/** 
+ * Наследник класса Actor - класс акционного покупателя
+*/
 public class ActionClient extends Actor {
        
     // Включить поле название акции и номер клиента в акции(поле статическое)
-    String nameAction;
-    static int lastManStanding = 3;
-    private boolean saleAction = true;
+    /** дополнительное поле - название акции */
+    private String nameAction;
+    /** дополнительное поле - максимальное число участников акции */
+    private static int lastManStanding = 3;
 
+    /** Возможное поле для подтверждения или отмены участия покупателя в акции. Однако хотелось бы при исчерпании лимита (lastManStanding) - создавать не акционного покупателя, а обыкновенного (OrdinaryClient) */
+    // private boolean saleAction = true;
+
+    /**
+     * 
+     * @param name - имя покупателя
+     * @param nameAction - название акции
+     */
     public ActionClient(String name, String nameAction){
         super(name);
         lastManStanding--;
         if (lastManStanding <= 0) {
             lastManStanding = 0;
-            saleAction = false;
+            // saleAction = false;
             System.out.printf("Отказ клиенту %s: исчерпан лимит акционных покупателей\n", name);
         }
     }
 
 
+    public int getAction() {
+        return lastManStanding;
+    }
+
+    public String getActionName() {
+        return nameAction;
+    }
 
     @Override
     public String getName() {
         return super.name;
     }
 
-    public int getAction() {
-        return lastManStanding;
-    }
 
     @Override
     public boolean isMakeOrder() {
@@ -51,6 +69,20 @@ public class ActionClient extends Actor {
     @Override
     public Actor getActor() {
         return this;
+    }
+
+
+    @Override
+    public boolean isReturnable(boolean canBeReturned) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'isReturnable'");
+    }
+
+
+    @Override
+    public boolean returnOrder(int orderId) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'returnOrder'");
     }
 
 }
