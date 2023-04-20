@@ -23,7 +23,7 @@ public class HotDrink extends Product {
         {
             super(name, price);
             this.volume = volume;
-
+            
             if (heat < -273) {
                 heat = -273;
             }
