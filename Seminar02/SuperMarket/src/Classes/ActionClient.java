@@ -5,7 +5,7 @@ package Classes;
 /** 
  * Наследник класса Actor - класс акционного покупателя
 */
-public class ActionClient extends Actor {
+public class ActionClient extends OrdinaryClient {
        
     // Включить поле название акции и номер клиента в акции(поле статическое)
     /** дополнительное поле - название акции */
@@ -24,11 +24,21 @@ public class ActionClient extends Actor {
     public ActionClient(String name, String nameAction){
         super(name);
         lastManStanding--;
-        if (lastManStanding <= 0) {
+        if (lastManStanding < 0) {
             lastManStanding = 0;
             // saleAction = false;
             System.out.printf("Отказ клиенту %s: исчерпан лимит акционных покупателей\n", name);
+            this.nameAction = "Out";
+            System.out.println("Name of the current class nameAction: " + getClass().getName() + " " + this.nameAction);
+            return;
+            
+            // return (new OrdinaryClient(String name));
         }
+        else {
+            this.nameAction = nameAction;
+        }
+        System.out.println("Name of the current class: " + getClass().getName());
+        
     }
 
 

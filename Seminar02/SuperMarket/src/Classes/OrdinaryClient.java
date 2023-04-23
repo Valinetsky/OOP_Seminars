@@ -37,5 +37,17 @@ public class OrdinaryClient extends Actor {
         return this;
     }
 
+    @Override
+    public boolean isReturnable(boolean canBeReturned) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public boolean returnOrder(int orderId) {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
     
 }
