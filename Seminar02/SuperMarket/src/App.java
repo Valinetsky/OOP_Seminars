@@ -5,35 +5,39 @@ import Classes.SpecialClient;
 import Interfaces.iActorBehaviour;
 
 public class App {
-    public static void main(String[] args) throws Exception {
-    //    Market market = new Market();
-    //    OrdinaryClient client1 = new OrdinaryClient("Boris");
-    //    OrdinaryClient client2 = new OrdinaryClient("Dasha");
-    //    SpecialClient client3 = new SpecialClient("Fedor", 1101);
-    //    market.acceptToMarket(client1);
-    //    market.acceptToMarket(client2);
-    //    market.acceptToMarket(client3);
-    //    market.update();
+	public static void main(String[] args) throws Exception {
+		// Market market = new Market();
+		// OrdinaryClient client1 = new OrdinaryClient("Boris");
+		// OrdinaryClient client2 = new OrdinaryClient("Dasha");
+		// SpecialClient client3 = new SpecialClient("Fedor", 1101);
+		// market.acceptToMarket(client1);
+		// market.acceptToMarket(client2);
+		// market.acceptToMarket(client3);
+		// market.update();
 
-       Market market = new Market();
-       iActorBehaviour item1 = new OrdinaryClient("Boris");
-       iActorBehaviour item2 = new SpecialClient("Fedor", 1101);
-       iActorBehaviour item3 = new OrdinaryClient("Dasha");
+		Market market = new Market();
+		iActorBehaviour item1 = new OrdinaryClient("Boris");
+		iActorBehaviour item2 = new SpecialClient("Fedor", 1101);
+		iActorBehaviour item3 = new OrdinaryClient("Dasha");
 
-       iActorBehaviour item4 = new ActionClient("Human01", "CashBack");
-       iActorBehaviour item5 = new ActionClient("Human02", "CashBack");
-       iActorBehaviour item6 = new ActionClient("Human03", "CashBack");
-       iActorBehaviour item7 = new ActionClient("Human04", "CashBack");
+		iActorBehaviour item4 = new ActionClient("Human01", "CashBack");
+		iActorBehaviour item5 = new ActionClient("Human02", "CashBack");
+		iActorBehaviour item6 = new ActionClient("Human03", "CashBack");
+		iActorBehaviour item7 = new ActionClient("Human04", "CashBack");
 
-       market.acceptToMarket(item1);
-       market.acceptToMarket(item2);
-       market.acceptToMarket(item3);
+		market.acceptToMarket(item1);
+		market.acceptToMarket(item2);
+		market.acceptToMarket(item3);
 
-       market.acceptToMarket(item4);
-       market.acceptToMarket(item5);
-       market.acceptToMarket(item6);
-       market.acceptToMarket(item7);
+		market.acceptToMarket(item4);
+		// Возврат товара четвертым клиентом (номер товара 777)
+		item4.getActor().returnOrder(777);
+		System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^");
 
-       market.update();
-    }
+		market.acceptToMarket(item5);
+		market.acceptToMarket(item6);
+		market.acceptToMarket(item7);
+
+		market.update();
+	}
 }
