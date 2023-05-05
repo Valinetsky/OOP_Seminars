@@ -73,9 +73,21 @@ public class FileRepo implements iGetModel {
         return students;
     }
 
+    /** добавление студента и запись файла */
+    @Override
+    public void addStudentToRepo(Student student) {
+        students.add(student);
+        saveAllStudentToFile();
+    }
 
-
-    
-
-    
-}
+    /** удаление студента и запись файла */
+    @Override
+    public void deleteStudent(long studentID) {
+            for (int i = 0; i < students.size(); i++) {
+                if (students.get(i).getStudentID() == studentID) {
+                    students.remove(i);
+                    saveAllStudentToFile();
+                }
+            }
+        }
+    }

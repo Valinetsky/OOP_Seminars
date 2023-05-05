@@ -1,5 +1,6 @@
 package Controller;
 
+/** список команд меню */
 public enum Commands {
     NONE,
     READ,

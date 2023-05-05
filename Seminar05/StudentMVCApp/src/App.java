@@ -1,14 +1,16 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import Controller.Controller;
 import Controller.iGetModel;
 import Controller.iGetView;
 import Model.FileRepo;
 import Model.Model;
-
+import Model.ModelHashMap;
 import Model.Student;
 import View.View;
+import View.ViewEng;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -29,24 +31,45 @@ public class App {
 
        
        FileRepo fileRepo = new FileRepo("StudentDb.txt");
-    //    for(Student pers :students)
-    //    {
-    //     fileRepo.addStudent(pers);
-    //    }
-    //    fileRepo.saveAllStudentToFile();
+      //  for(Student pers :students)
+      //  {
+      //   fileRepo.addStudent(pers);
+      //  }
+      //  fileRepo.saveAllStudentToFile();
+    
+      iGetModel model = new Model(students);
+      iGetModel modelFileRepo = fileRepo;
+      iGetModel modelHashMap = new ModelHashMap(students);
 
+      
 
-       iGetModel model = new Model(students);
-       iGetModel modelFileRepo = fileRepo;
+      // ------------- подключение View или ViewEng ------
+      iGetView view = new View();
+      iGetView viewEng = new ViewEng();
+      
+      Scanner in = new Scanner(System.in);
+      boolean flagLangInput = true;
+      int num = -1;
+      while (flagLangInput) {
+         System.out.print("Продолжить на русском (1 - да, 0 - переключение на ViewEng): ");
+         if (in.hasNextInt()){
+            num = in.nextInt();
+            System.out.println(num);
+            if (num == 0 || num == 1) {
+               flagLangInput = false;
+            }
+         }
+      }
 
+      if (num == 0) {
+         view = viewEng;
+      }
+      // --------------------
+
+     
        
-
-
-
-
-       iGetView view = new View();
-       Controller control = new Controller(view, modelFileRepo);
-       control.run();
+      Controller control = new Controller(view, modelHashMap);
+      control.run();
       // control.updateView();
        
     }
