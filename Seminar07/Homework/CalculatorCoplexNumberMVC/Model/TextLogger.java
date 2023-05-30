@@ -76,6 +76,6 @@ public class TextLogger extends LoggerModel implements iLogger<ComplexNumber> {
 	/** Переопределение метода из интерфейса iLogger */
 	@Override
 	public void writeLog(ComplexNumber firtsTerm, ComplexNumber secondTerm, ComplexNumber result, Menu menu) {
-		this.logger.info(String.format("%s %s %s = %s", firtsTerm, menu, secondTerm, result));
+		this.logger.info(String.format("%s %s %s = %s", firtsTerm, menu.getOperator(), secondTerm, result));
 	}
 }

@@ -14,23 +14,28 @@ public enum Menu {
 	private String operator;
 
 	/**
-	 * Метод возврата символа оператора.
-	 * Не используется в программе
+	 * Констркутор
 	 * 
-	 * @param operator
+	 * @param operator - символ оператора
 	 */
 	Menu(String operator) {
 		this.operator = operator;
 	}
 
+	/**
+	 * Геттер символа оператора
+	 * 
+	 * @return - строковый тип (возвращает operator)
+	 */
 	public String getOperator() {
 		return operator;
 	}
 
-	@Override
-	public String toString() {
-		return operator;
-	}
+	// Не использован
+	// @Override
+	// public String toString() {
+	// return operator;
+	// }
 }
 
 // Переусложненный блок. Отказался от применения

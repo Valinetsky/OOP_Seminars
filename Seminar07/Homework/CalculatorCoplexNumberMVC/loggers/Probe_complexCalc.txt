@@ -1,4 +1,4 @@
-мая 30, 2023 2:04:48 PM Model.TextLogger writeLog
-INFO: (-10.6 + 2i) MULTYPLY (0.5 + 0i) = (-5.3 + 1i)
-мая 30, 2023 2:09:16 PM Model.TextLogger writeLog
-INFO: (5 + 5i) MULTYPLY (7 + 3i) = (20 + 50i)
+мая 30, 2023 2:37:59 PM Model.TextLogger writeLog
+INFO: (45 + 0i) / (3 + 0i) = (15 + 0i)
+мая 30, 2023 2:39:16 PM Model.TextLogger writeLog
+INFO: (0 + 0i) / (0 + 0i) = (NaN + NaNi)
